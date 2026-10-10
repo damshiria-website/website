@@ -1,0 +1,65 @@
+/*
+ * Palette and fonts of stmarydamshiria.com, taken from the live template CSS
+ * (templates/damshiria/css/template.css, Artisteer 2.3) and checked against the
+ * computed styles of the live page on 2026-10-11 (docs/inventory.md, "Colors").
+ *
+ * The "color grades" of the original (parchment page, wood menu tabs, aged
+ * header, sidebar block headers, footer band) are bitmap gradients, not CSS
+ * gradients. They are kept as the original image files in assets/img/theme/
+ * and referenced below, so the look is pixel-identical.
+ */
+:root {
+  /* page */
+  --c-page-bg: #E6CE9B;          /* body background under back.jpg */
+  --c-text: #40463E;             /* body / article text  rgb(64,70,62) */
+  --c-text-alt: #4A5148;
+  --c-text-muted: #4F564D;
+  --c-heading: #2F332E;          /* .art-PostHeader  rgb(47,51,46) */
+
+  /* links */
+  --c-link: #887A44;             /* rgb(136,122,68), underlined */
+  --c-link-hover: #B3911A;
+  --c-link-visited: #665C33;
+
+  /* menu */
+  --c-menu-text: #FFFFFF;        /* top tab label */
+  --c-menu-hover-text: #232622;
+  --c-menu-active-text: #070807;
+  --c-submenu-text: #474024;
+
+  /* sidebar blocks */
+  --c-block-header-text: #F0EDE0;
+  --c-block-text: #43280A;       /* rgb(67,40,10) */
+  --c-reading-red: #8B0000;      /* daily readings module headings and refs */
+
+  /* surfaces, borders, accents */
+  --c-white: #FFFFFF;
+  --c-surface: #E9E4D3;
+  --c-surface-light: #F8F7F1;
+  --c-surface-lighter: #FCF9ED;
+  --c-border: #D4CCAA;
+  --c-accent-red: #DE7A7B;
+  --c-highlight: #f0dc7e;
+  --c-highlight-pale: #fffebb;
+  --c-footer-text: #FFFFFF;
+
+  /* fonts (the live site loads no web fonts) */
+  --font-body: Tahoma, Arial, Helvetica, sans-serif;   /* 12px */
+  --font-heading: Arial, Helvetica, sans-serif;         /* post headers 22px bold, menu 17px bold */
+  --fs-body: 12px;
+  --fs-post-header: 22px;
+  --fs-menu: 17px;
+
+  /* bitmap gradients ("color grades") */
+  --img-page: url('../img/theme/back.jpg');
+  --img-header: url('../img/theme/Header.jpg');
+  --img-nav: url('../img/theme/nav.png');
+  --img-menu-item: url('../img/theme/MenuItem.png');
+  --img-block-header: url('../img/theme/BlockHeader.jpg');
+  --img-block-content: url('../img/theme/BlockContent-c.png');
+  --img-button: url('../img/theme/Button.png');
+  --img-footer: url('../img/theme/Footer.png');
+
+  /* layout */
+  --sheet-width: 900px;
+}

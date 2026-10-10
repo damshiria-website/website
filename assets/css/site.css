@@ -1,0 +1,135 @@
+/* Additions to the original template: system defaults the old Joomla CSS gave,
+   the new static widgets (slider, gallery, readings, audio, form) and the
+   responsive layout. Colors come from variables.css. */
+
+body { margin: 0; color: var(--c-text); font-family: var(--font-body); font-size: var(--fs-body); }
+img { max-width: 100%; height: auto; border: 0; }
+.art-Sheet { margin-left: auto; margin-right: auto; }
+.art-Header-jpeg .header-home { display: inline-block; padding-left: 45px; padding-top: 23px; }
+.art-Header-jpeg .header-icon { display: block; }
+.article_separator { display: block; height: 20px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.footer-p { font-family: Tahoma; font-size: 12px; color: var(--c-footer-text); font-weight: bold; }
+.menu-toggle { display: none; }
+
+/* readings box: same look as the old com_reading module */
+.readings { text-align: center; padding: 0 0.5cm; font-family: Tahoma, verdana, helvetica; }
+.readings .r-title { color: #000; font: bold 20px Arial; text-decoration: underline; }
+.readings .r-date { color: #000; font-size: 12px; margin-bottom: 4px; }
+.readings .r-head { color: var(--c-reading-red); font: bold 20px Arial; text-decoration: underline; margin-top: 6px; }
+.readings a.r-link, .readings a.r-link:visited { color: var(--c-reading-red); text-decoration: none; font-size: 12px; display: block; }
+.readings a.r-link:hover { text-decoration: underline; }
+
+/* slider (was DJ Image Slider, 800px, 1 visible) */
+.slider { position: relative; overflow: hidden; max-width: 800px; margin: 0 auto 12px; direction: rtl; }
+.slider-track { display: flex; transition: transform .6s linear; }
+.slide { flex: 0 0 100%; }
+.slide img { display: block; width: 100%; }
+.slider button { position: absolute; top: 50%; transform: translateY(-50%); border: 0; cursor: pointer;
+  background: rgba(47, 51, 46, .55); color: var(--c-white); font-size: 26px; line-height: 1; width: 36px; height: 44px; }
+.slider .slider-prev { right: 0; }
+.slider .slider-next { left: 0; }
+.slider .slider-pause { top: auto; bottom: 8px; transform: none; left: 50%; margin-left: -18px; font-size: 13px; height: 28px; }
+.slider.paused .slider-pause { background: var(--c-link); }
+@media (prefers-reduced-motion: reduce) { .slider-track { transition: none; } }
+
+/* gallery (was Phoca Gallery, 120px boxes) */
+.gallery { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; margin: 10px 0; }
+.gallery-item { width: 120px; margin: 0; text-align: center; }
+.gallery-item a { display: flex; align-items: center; justify-content: center; width: 118px; height: 118px;
+  border: 1px solid var(--c-border); background: var(--c-surface-light); }
+.gallery-item img { max-width: 100px; max-height: 100px; }
+.gallery-item figcaption { font-size: 12px; margin-top: 4px; }
+.gallery-pager { text-align: center; margin: 10px 0; font-size: 13px; }
+.gallery-pager a, .gallery-pager span { display: inline-block; padding: 2px 8px; margin: 0 2px; }
+.gallery-pager .current { font-weight: bold; color: var(--c-heading); }
+.lb { position: fixed; inset: 0; z-index: 10000; background: rgba(0, 0, 0, .8); display: none;
+  align-items: center; justify-content: center; }
+.lb.open { display: flex; }
+.lb figure { margin: 0; max-width: 90vw; max-height: 90vh; text-align: center; }
+.lb img { max-width: 90vw; max-height: 82vh; border: 6px solid var(--c-surface-light); background: var(--c-surface-light); }
+.lb figcaption { color: var(--c-white); font: 14px var(--font-body); margin-top: 6px; }
+.lb button { position: absolute; background: none; border: 0; color: var(--c-white); font-size: 42px; cursor: pointer; padding: 10px; }
+.lb .lb-close { top: 6px; left: 12px; }
+.lb .lb-prev { right: 10px; top: 50%; transform: translateY(-50%); }
+.lb .lb-next { left: 10px; top: 50%; transform: translateY(-50%); }
+
+/* embeds */
+.video-embed { position: relative; max-width: 480px; margin: 0 auto; aspect-ratio: 480 / 296; }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.live-frame { width: 600px; max-width: 100%; height: 450px; border: 0; }
+.dead-embed { max-width: 480px; margin: 0 auto; padding: 40px 10px; text-align: center; background: var(--c-surface);
+  border: 1px solid var(--c-border); color: var(--c-text-muted); }
+.live-audio audio { width: 300px; max-width: 100%; }
+.alenjil-holder { overflow-x: auto; }
+
+/* downloads */
+.play-btn { cursor: pointer; background: none; border: 0; color: var(--c-link); text-decoration: underline;
+  font: inherit; padding: 0; }
+audio.inline-player { width: 100%; margin: 4px 0 8px; }
+
+/* prayer form */
+.prayer-form fieldset { border: 1px solid var(--c-border); padding: 10px 14px; }
+.prayer-form legend { font-weight: bold; color: var(--c-heading); }
+.prayer-form input[type=text], .prayer-form input[type=email], .prayer-form textarea {
+  width: 100%; max-width: 420px; box-sizing: border-box; font: 13px var(--font-body); padding: 4px;
+  border: 1px solid var(--c-border); background: var(--c-white); }
+.prayer-form textarea { max-width: 100%; height: 250px; }
+.prayer-form .form-status { color: var(--c-reading-red); font-weight: bold; min-height: 1em; }
+.prayer-form button.art-button { font: 12px var(--font-body); padding: 4px 14px; cursor: pointer;
+  border: 1px solid var(--c-link); background: var(--c-highlight); color: #000; border-radius: 4px; }
+
+/* ------------------------------------------------------------- responsive */
+@media (max-width: 920px) {
+  body { background-size: auto; }
+  .art-Sheet, div.art-Header, div.art-Header-jpeg, .art-contentLayout, .art-Footer,
+  .art-Footer .art-Footer-background { width: 100% !important; min-width: 0 !important; }
+  #art-page-background-simple-gradient, #art-page-background-gradient, #art-page-background-glare { min-width: 0; }
+  .art-Sheet { margin-top: 0 !important; }
+  .art-Sheet-tl, .art-Sheet-tr, .art-Sheet-bl, .art-Sheet-br, .art-Sheet-tc, .art-Sheet-bc,
+  .art-Sheet-cl, .art-Sheet-cr { display: none; }
+  .art-Sheet-cc { left: 0; right: 0; top: 0; bottom: 0; }
+  .art-Sheet-body { padding: 0 !important; }
+
+  /* header: scale the 892x256 bitmap */
+  div.art-Header { height: auto; aspect-ratio: 892 / 256; }
+  div.art-Header-jpeg { height: 100%; background-size: cover; background-position: center top; }
+  .art-Header-jpeg .header-home { padding: 2.6% 0 0 5%; }
+  .art-Header-jpeg .header-icon { width: 15vw; max-width: 134px; height: auto; }
+
+  /* menu becomes a drop-down list */
+  .art-nav { height: auto; min-height: 44px; background: var(--img-nav) center top; background-size: cover; }
+  .art-nav .l, .art-nav .r { display: none; }
+  .menu-toggle { display: block; margin: 0 auto; padding: 8px 16px; border: 0; background: none;
+    color: var(--c-menu-text); font: bold 17px var(--font-heading); text-shadow: 0 1px 2px #000; cursor: pointer; }
+  div.art-nav-center, ul.art-menu { float: none; right: auto; left: auto; position: static; }
+  div.art-nav-center { display: none; padding: 0 10px 10px; }
+  .art-nav.open div.art-nav-center { display: block; }
+  .art-menu { padding: 0 !important; }
+  .art-menu li { float: none; }
+  .art-menu > li > a { margin: 3px 0; height: auto; }
+  .art-menu a .t { display: block; }
+  .art-menu ul { visibility: visible; position: static; display: none; margin: 0 !important; padding: 0 12px 4px 0 !important;
+    background: none; }
+  .art-menu li.sub-open > ul { display: block; }
+  .art-menu li:hover > ul { visibility: visible; }
+  .art-menu ul a, .art-menu ul ul a { width: auto; }
+
+  /* content then sidebar, full width */
+  .art-contentLayout .art-content-sidebar1, .art-contentLayout .art-sidebar2 { float: none; width: auto; }
+  .art-Post { margin: 0 6px; }
+  .art-PostContent table { max-width: 100%; }
+  .art-PostContent table td { word-break: break-word; }
+  .art-sidebar2 { margin: 10px 6px 0; }
+  .art-Footer { margin-top: 5px; }
+  .art-Footer .art-Footer-background { height: 100%; background-size: cover; background-position: center; }
+  .art-PostContent iframe, .art-PostContent object { max-width: 100%; }
+  .art-article img[style*="float"], .art-article img[align] { max-width: 45%; }
+  .art-PostContent p[style*="text-align: right"] { text-align: right; }
+}
+@media (max-width: 480px) {
+  .art-PostHeader { font-size: 19px !important; }
+  .art-PostContent blockquote { margin: 10px 4px; }
+  .gallery { justify-content: center; }
+  .live-frame { height: 300px; }
+}
