@@ -1,6 +1,6 @@
 # كنيسة السيدة العذراء الدمشيرية — static site
 
-A static rebuild of https://stmarydamshiria.com/ (previously Joomla). It is plain HTML, CSS and JS with no build step, so GitHub Pages serves it as it is.
+A static rebuild of https://stmarydamshiria.net/ (previously Joomla). It is plain HTML, CSS and JS with no build step, so GitHub Pages serves it as it is.
 
 - `index.html` and one `<path>/index.html` per page. Old URLs keep working.
 - `assets/css/variables.css` holds the palette and fonts. `template.css` is the original theme, with its colors moved to variables. `site.css` holds the widgets and the phone layout.
@@ -22,7 +22,7 @@ A static rebuild of https://stmarydamshiria.com/ (previously Joomla). It is plai
        git push -u origin main
 
 3. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main` / `(root)` → Save.**
-4. The `CNAME` file (already here) contains `stmarydamshiria.com`. Under **Settings → Pages → Custom domain** enter `stmarydamshiria.com`, wait for the DNS check, then tick **Enforce HTTPS**.
+4. The `CNAME` file (already here) contains `stmarydamshiria.net`. Under **Settings → Pages → Custom domain** enter `stmarydamshiria.net`, wait for the DNS check, then tick **Enforce HTTPS**.
 5. At the domain's DNS provider, delete the old A/AAAA records for the root and `www`, then add:
 
    | Type | Name | Value |
